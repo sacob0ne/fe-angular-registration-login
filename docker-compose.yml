@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  angular-9-registration-login:
+    build:
+      context: .
+    container_name: angular-9-registration-login
+    ports:
+      - 4200:4200
+networks:
+  default:
+    external:
+      name: angular-nodejs-example

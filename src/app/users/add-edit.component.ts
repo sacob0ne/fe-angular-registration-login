@@ -1,4 +1,15 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿// The users add/edit component is used for both adding and editing users, 
+// the component is in "add mode" when there is no user id route parameter, 
+// otherwise it is in "edit mode". The property isAddMode is used to change the 
+// component behaviour based on which mode it is in, for example in "add mode" 
+// the password field is required, and in "edit mode" (!this.isAddMode) the account 
+// service is called when the component initializes to get the user details 
+// (this.accountService.getById(this.id)) to preset the field values.
+
+// On submit a user is either created or updated by calling the account service, 
+// and on success you are redirected back to the users list page with a success message.
+
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';

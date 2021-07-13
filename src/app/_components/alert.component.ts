@@ -1,4 +1,25 @@
-﻿import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+﻿// The alert component controls the adding & removing of alerts in the UI, 
+// it maintains an array of alerts that are rendered by the component template.
+
+// The ngOnInit method subscribes to the observable returned from the 
+// alertService.onAlert() method, this enables the alert component to be notified 
+// whenever an alert message is sent to the alert service and add it to the 
+// alerts array for display. Alerts are cleared when an alert with an empty message
+// is received from the alert service. The ngOnInit method also calls 
+// router.events.subscribe() to subscribe to route change events so it can 
+// automatically clear alerts on route changes.
+
+// The ngOnDestroy() method unsubscribes from the alert service and router when 
+// the component is destroyed to prevent memory leaks from orphaned subscriptions.
+
+// The removeAlert() method removes the specified alert object from the array, 
+// which allows individual alerts to be closed in the UI.
+
+// The cssClass() method returns a corresponding bootstrap alert class for each of 
+// the alert types, if you're using something other than bootstrap you can change 
+// the CSS classes returned to suit your application.
+
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
 

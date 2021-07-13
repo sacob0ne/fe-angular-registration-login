@@ -1,4 +1,8 @@
-﻿import { Component } from '@angular/core';
+﻿// The home component defines an angular 9 component that gets 
+// the current logged in user from the account service and makes 
+// it available to the template via the user object property.
+
+import { Component } from '@angular/core';
 
 import { User } from '@app/_models';
 import { AccountService } from '@app/_services';

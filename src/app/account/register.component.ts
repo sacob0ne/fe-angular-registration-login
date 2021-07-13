@@ -1,4 +1,16 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿// The register component creates a new user with the account service when 
+// the register form is valid and submitted.
+
+// It creates the form fields and validators using an Angular FormBuilder 
+// to create an instance of a FormGroup that is stored in the form property. 
+// The form is then bound to the <form> element in the register component 
+// template above using the [formGroup] directive.
+
+// The component contains a convenience getter property f to make it a bit 
+// easier to access form controls, for example you can access the password 
+// field in the template using f.password instead of form.controls.password.
+
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';

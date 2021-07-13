@@ -1,4 +1,18 @@
-﻿import { Injectable } from '@angular/core';
+﻿// In order to run and test the Angular application without a real backend API, 
+// the example uses a fake backend that intercepts the HTTP requests from the 
+// Angular app and sends back "fake" responses. This is done by a class that 
+// implements the Angular HttpInterceptor interface, for more information on Angular 
+// HTTP Interceptors see https://angular.io/api/common/http/HttpInterceptor or this article.
+
+// The fake backend contains a handleRoute function that checks if the request matches
+// one of the faked routes in the switch statement, at the moment this includes requests
+// for handling registration, authentication and user CRUD operations. Matching requests
+// are intercepted and handled by one of the below // route functions, non-matching
+// requests are sent through to the real backend by calling next.handle(request);. 
+// Below the route functions there are // helper functions for returning different 
+// response types and performing small tasks.
+
+import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';

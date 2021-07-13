@@ -1,4 +1,9 @@
-﻿<!-- nav -->
+﻿<!-- The app component template is the root component template of the application, 
+it contains the main nav bar which is only displayed for authenticated users, 
+a global alert component, and a router-outlet component for displaying the contents 
+of each view based on the current route / path. -->
+
+<!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>

@@ -1,4 +1,10 @@
-﻿<div class="card">
+﻿<!-- The login component template contains a login form with username and password fields. 
+It displays validation messages for invalid fields when the submit button is clicked. 
+The form submit event is bound to the onSubmit() method of the login component.
+
+The component uses reactive form validation to validate the input fields. -->
+
+<div class="card">
     <h4 class="card-header">Login</h4>
     <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">

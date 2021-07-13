@@ -1,4 +1,12 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿// The users list component gets all users from the account service in the ngOnInit() 
+// method and makes them available to the users list template via the users property.
+
+// The deleteUser() method first sets the property user.isDeleting = true so the 
+// template displays a spinner on the delete button, it then calls this.accountService.delete() 
+// to delete the user and removes the deleted user from component users array so it is 
+// removed from the UI.
+
+import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { AccountService } from '@app/_services';
